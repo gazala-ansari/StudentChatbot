@@ -19,6 +19,8 @@ def home():
 def get_bot_response():
     userText = request.args.get('msg')
     res=try1(userText)
-    return str((userText)) 
+    return str((res)) 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=PORT, debug=True)
+    app.secret_key = 'super_secret_key'
+    app.debug = True
+    app.run(host='0.0.0.0', port=5000)
